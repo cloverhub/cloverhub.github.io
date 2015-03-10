@@ -7,8 +7,9 @@
 #### PageSpeed
 * Desktop 97/100
 * Mobile 95/100
+
 #### Cam's Pizzeria JavaScript Performance
-* Average time to generate last 10 frames on scrol: ~0.27ms
+* Average time to generate last 10 frames on scroll: ~0.27ms
 * Time to resize pizzas: 0.6130000001576263ms
 
 ### Optimizations Made
