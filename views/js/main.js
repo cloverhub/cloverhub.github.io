@@ -473,7 +473,7 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-var pizzasDiv = document.getElementById("randomPizzas"); // Initialized the pizzasDiv variable outside of the FOR loop to see if performance increases
+var pizzasDiv = document.getElementById("randomPizzas"); // Initialized the pizzasDiv variable outside of the FOR loop to see if page load performance increases
 for (var i = 2; i < 100; i++) {
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
@@ -514,7 +514,7 @@ function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.querySelectorAll('.mover');
+  var items = document.getElementsByClassName('.mover'); // changed to document.getElementsByClassName which is faster than querySelectorAll()
   var scrollNumber = document.body.scrollTop / 1250; // Moved out of the for loop
 
 
