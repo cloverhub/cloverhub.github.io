@@ -513,8 +513,7 @@ function onScroll() {
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
-
-  var items = document.getElementsByClassName('.mover'); // changed to document.getElementsByClassName which is faster than querySelectorAll()
+  var items = document.getElementsByClassName('mover'); // changed to document.getElementsByClassName which is faster than querySelectorAll()
   var scrollNumber = document.body.scrollTop / 1250; // Moved out of the for loop
 
 
