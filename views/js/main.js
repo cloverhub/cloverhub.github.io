@@ -516,10 +516,15 @@ function updatePositions() {
   var items = document.getElementsByClassName('mover'); // changed to document.getElementsByClassName which is faster than querySelectorAll()
   var scrollNumber = document.body.scrollTop / 1250; // Moved out of the for loop
 
+  // Since there are only five possible values for the phase we can precalculate them and save them to an array called fivePhases
+  var fivePhases = [];
+  for(var i = 0; i < 5; i++) {
+    fivePhases.push(Math.sin(scrollNumber + i % 5)); 
+  }
 
+  // Now we can use the fivePhases array in the FOR loop
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(scrollNumber + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    items[i].style.left = items[i].basicLeft + 100 * fivePhases[i % 5] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
